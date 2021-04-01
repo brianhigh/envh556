@@ -6,7 +6,7 @@ if (!dir.exists(mylib)) dir.create(mylib, recursive = T, showWarnings = F)
 if (!suppressWarnings(require("pacman"))) install.packages("pacman")
 
 pacman::p_load(tinytex)
-if (!dir.exists(tinytex_root())) tinytex::install_tinytex()
+if (!dir.exists(tinytex_root(error = F))) tinytex::install_tinytex()
 
 pacman::p_load(BiocManager)
 if (!suppressWarnings(require("limma"))) BiocManager::install("limma")
