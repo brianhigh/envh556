@@ -18,5 +18,4 @@ pacman::p_load(stringr, forcats, Hmisc, EnvStats, codetools)
 pacman::p_load(multcomp, modelr, car, lme4, VCA, parallel)  
 pacman::p_load(geoR, maps, scatterplot3d, ggmap, funModeling, scales, akima)
 pacman::p_load(MKmisc)
-pacman::p_load(stats4, boot, gsl)
 
