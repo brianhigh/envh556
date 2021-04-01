@@ -1,12 +1,15 @@
 # Install all of the packages used in this repository.
 
+mylib <- Sys.getenv("R_LIBS_USER")
+if (!dir.exists(mylib)) dir.create(mylib, recursive = T, showWarnings = F)
+
 if (!suppressWarnings(require("pacman"))) install.packages("pacman")
 
 pacman::p_load(tinytex)
-tinytex::install_tinytex()
+if (!dir.exists(tinytex_root())) tinytex::install_tinytex()
 
 pacman::p_load(BiocManager)
-BiocManager::install("limma")
+if (!suppressWarnings(require("limma"))) BiocManager::install("limma")
 
 pacman::p_load(plyr, reshape2)
 pacman::p_load(knitr, readr, dplyr, tidyr, ggplot2, formatR)
